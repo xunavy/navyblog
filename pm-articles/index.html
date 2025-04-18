@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目管理文章 - 数字专家的个人空间</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .articles-header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        
+        .articles-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .articles-description {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .articles-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+        
+        .articles-filter {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .filter-tabs {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .filter-tab {
+            padding: 8px 15px;
+            border-radius: 20px;
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-tab.active, .filter-tab:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .search-bar {
+            position: relative;
+        }
+        
+        .search-bar input {
+            padding: 8px 15px 8px 35px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            width: 250px;
+            font-family: inherit;
+        }
+        
+        .search-bar i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        
+        .article-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .article-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .article-image {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .article-card:hover .article-image img {
+            transform: scale(1.05);
+        }
+        
+        .article-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-category {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .article-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .article-excerpt {
+            color: #666;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #999;
+        }
+        
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 5px;
+        }
+        
+        .pagination-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            color: var(--dark-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .pagination-item.active, .pagination-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">Navy's Blog</div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../index.html#about">关于我</a></li>
+                    <li><a href="../index.html#expertise">专业领域</a></li>
+                    <li><a href="../index.html#technologies">技术前沿</a></li>
+                    <li><a href="../index.html#skills">管理能力</a></li>
+                    <li><a href="./index.html" class="active">项目管理</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="articles-header">
+            <h1 class="articles-title">项目管理知识库</h1>
+            <p class="articles-description">
+                这里收录了我在项目管理领域的思考、经验和最佳实践，涵盖敏捷开发、需求管理、团队协作、风险控制等多个方面，
+                旨在为软件开发团队和管理者提供实用的指导和参考。
+            </p>
+        </div>
+        
+        <div class="articles-container">
+            <div class="articles-filter">
+                <div class="filter-tabs">
+                    <div class="filter-tab active">全部</div>
+                    <div class="filter-tab">需求管理</div>
+                    <div class="filter-tab">范围管理</div>
+                    <div class="filter-tab">敏捷开发</div>
+                    <div class="filter-tab">团队管理</div>
+                    <div class="filter-tab">风险控制</div>
+                </div>
+                <div class="search-bar">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="搜索文章...">
+                </div>
+            </div>
+            
+            <div class="article-list">
+                <a href="./scope-management.html" class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?q=80&w=2070&auto=format&fit=crop" alt="范围管理图片">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-category">范围管理</div>
+                        <h3 class="article-title">项目范围管理详解</h3>
+                        <div class="article-excerpt">
+                            深入解析项目范围管理的关键知识点，包括WBS分解、需求变更控制和需求跟踪矩阵，为项目管理工程师考试提供系统化的复习指南。
+                        </div>
+                        <div class="article-meta">
+                            <span>Navy Xu</span>
+                            <span>2024-05-28</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="./requirement-management.html" class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop" alt="需求管理图片">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-category">需求管理</div>
+                        <h3 class="article-title">需求管理的最佳实践</h3>
+                        <div class="article-excerpt">
+                            探讨企业级软件开发中需求管理的最佳实践，从需求收集、分析、优先级确定到持续验证的整个生命周期提供实用指导。
+                        </div>
+                        <div class="article-meta">
+                            <span>Navy Xu</span>
+                            <span>2024-04-18</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop" alt="敏捷开发图片">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-category">敏捷开发</div>
+                        <h3 class="article-title">Scrum中常见的10个误区</h3>
+                        <div class="article-excerpt">
+                            Scrum是最流行的敏捷方法之一，但在实践中常常被误解和错误实施。本文分析了团队在应用Scrum时常见的误区及解决方案。
+                        </div>
+                        <div class="article-meta">
+                            <span>Navy Xu</span>
+                            <span>即将发布</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="团队管理图片">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-category">团队管理</div>
+                        <h3 class="article-title">打造高效研发团队的关键因素</h3>
+                        <div class="article-excerpt">
+                            研究表明，高效团队的生产力可以是普通团队的5-10倍。本文分析了高绩效研发团队的关键特征，以及如何培养这些特质。
+                        </div>
+                        <div class="article-meta">
+                            <span>Navy Xu</span>
+                            <span>即将发布</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?q=80&w=2076&auto=format&fit=crop" alt="风险控制图片">
+                    </div>
+                    <div class="article-content">
+                        <div class="article-category">风险控制</div>
+                        <h3 class="article-title">软件项目风险管理方法论</h3>
+                        <div class="article-excerpt">
+                            软件项目的失败率仍然居高不下，有效的风险管理是成功的关键。本文介绍了系统化的风险识别、评估和应对策略框架。
+                        </div>
+                        <div class="article-meta">
+                            <span>Navy Xu</span>
+                            <span>即将发布</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <div class="pagination-item active">1</div>
+                <div class="pagination-item">2</div>
+                <div class="pagination-item">3</div>
+                <div class="pagination-item"><i class="bi bi-chevron-right"></i></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Navy's Personal Blog. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // 简单的过滤功能示例
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const searchInput = document.querySelector('.search-bar input');
+            
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // 移除其他标签的激活状态
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    // 给当前标签添加激活状态
+                    this.classList.add('active');
+                    
+                    // 实际项目中这里应该添加过滤逻辑
+                    console.log('过滤类别:', this.textContent);
+                });
+            });
+            
+            searchInput.addEventListener('input', function() {
+                // 实际项目中这里应该添加搜索逻辑
+                console.log('搜索:', this.value);
+            });
+        });
+    </script>
+</body>
+</html> 

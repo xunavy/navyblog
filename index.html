@@ -20,20 +20,30 @@
                     <li><a href="#expertise">专业领域</a></li>
                     <li><a href="#technologies">技术前沿</a></li>
                     <li><a href="#skills">管理能力</a></li>
+                    <li><a href="pm-articles/index.html" target="_blank">项目管理</a></li>
                     <li><a href="#contact">联系方式</a></li>
                 </ul>
             </nav>
         </header>
 
+        <!-- 欢迎区域 -->
+        <section class="welcome">
+            <div class="welcome-content">
+                <h1>欢迎来到我的技术博客</h1>
+                <p>这里记录我在软件工程领域的学习笔记、项目心得与专业见解</p>
+                <a href="#about" class="btn btn-primary">了解更多</a>
+            </div>
+        </section>
+
         <main>
-            <section class="hero">
+            <section id="about" class="about">
                 <div class="profile-container">
                     <div class="profile-image">
                         <img src="person.jpg" alt="个人头像" id="avatar">
                     </div>
                     <div class="profile-text">
-                        <h1>欢迎来我的成长空间</h1>
-                        <p class="subtitle">数字空间</p>
+                        <h1>Navy's 技术空间</h1>
+                        <p class="subtitle">专注云原生 · AI · 数字化转型</p>
                         <div class="social-links">
                             <a href="https://github.com/xunavy" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
                             <a href="https://www.linkedin.com/in/xunavy624" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
@@ -42,13 +52,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <section id="about" class="about">
-                <div class="section-title">
-                    <h2>关于我</h2>
-                    <div class="underline"></div>
-                </div>
+                
                 <div class="about-content">
                     <div class="about-text">
                         <h3>专业背景</h3>
@@ -60,7 +64,7 @@
                         
                         <h3>技术专长</h3>
                         <ul>
-                            <li>APM领域专家：深耕超10年，精通全链路技术架构</li>
+                            <li>业务可观测,APM领域专家：深耕超15年，精通全链路技术架构</li>
                             <li>主导研发基于分布式追踪算法的性能分析模块，提高故障定位效率超80%</li>
                             <li>创新引入机器学习实现智能异常检测，大幅降低误报率</li>
                             <li>对云原生可观测性方案、实时流式数据分析在APM中的应用等前沿技术有深入理解与实践</li>
@@ -77,16 +81,6 @@
                 <div class="expertise-container">
                     <div class="expertise-category">
                         <div class="expertise-item">
-                            <div class="expertise-icon"><i class="bi bi-graph-up"></i></div>
-                            <h3>可观测性</h3>
-                            <p>精通分布式系统的可观测性技术，包括<a href="https://grafana.com/solutions/metrics/" target="_blank">指标监控</a>、<a href="https://www.elastic.co/guide/en/logs/guide/current/index.html" target="_blank">日志管理</a>、<a href="https://opentelemetry.io/docs/concepts/signals/traces/" target="_blank">分布式追踪</a>和<a href="https://www.dynatrace.com/monitoring/platform/application-performance-monitoring/" target="_blank">APM系统</a>的全栈实现</p>
-                        </div>
-                        <div class="expertise-item">
-                            <div class="expertise-icon"><i class="bi bi-cpu"></i></div>
-                            <h3>人工智能</h3>
-                            <p>深度掌握<a href="https://aws.amazon.com/machine-learning/" target="_blank">人工智能</a>和<a href="https://cloud.google.com/learn/what-is-machine-learning" target="_blank">机器学习</a>在企业级应用中的落地实践，包括<a href="https://openai.com/index/gpt-4/" target="_blank">LLM</a>、<a href="https://www.microsoft.com/en-us/research/blog/multimodal-ai-understanding-large-language-models-that-can-see-hear-and-interact/" target="_blank">大规模多模态模型应用</a></p>
-                        </div>
-                        <div class="expertise-item">
                             <div class="expertise-icon"><i class="bi bi-building-gear"></i></div>
                             <h3>企业数字化转型</h3>
                             <p>具备完整<a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/how-to-catch-the-digital-wave" target="_blank">企业数字化规划</a>和<a href="https://www.bcg.com/capabilities/digital-technology-data/digital-transformation/overview" target="_blank">实施能力</a>，善于结合业务需求与技术创新，推动<a href="https://hbr.org/2019/03/digital-transformation-is-not-about-technology" target="_blank">企业级数字化变革</a></p>
@@ -95,6 +89,16 @@
                             <div class="expertise-icon"><i class="bi bi-diagram-3"></i></div>
                             <h3>架构设计</h3>
                             <p>熟悉<a href="https://www.opengroup.org/togaf" target="_blank">TOGAF架构框架</a>，掌握<a href="https://martinfowler.com/bliki/DomainDrivenDesign.html" target="_blank">领域驱动设计(DDD)</a>实践，能够构建<a href="https://aws.amazon.com/architecture/well-architected/" target="_blank">高可扩展性、高性能的企业级系统架构</a></p>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon"><i class="bi bi-cpu"></i></div>
+                            <h3>人工智能</h3>
+                            <p>深度掌握<a href="https://aws.amazon.com/machine-learning/" target="_blank">人工智能</a>和<a href="https://cloud.google.com/learn/what-is-machine-learning" target="_blank">机器学习</a>在企业级应用中的落地实践，包括<a href="https://openai.com/index/gpt-4/" target="_blank">LLM</a>、<a href="https://www.microsoft.com/en-us/research/blog/multimodal-ai-understanding-large-language-models-that-can-see-hear-and-interact/" target="_blank">大规模多模态模型应用</a></p>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon"><i class="bi bi-graph-up"></i></div>
+                            <h3>可观测性</h3>
+                            <p>精通分布式系统的可观测性技术，包括<a href="https://grafana.com/solutions/metrics/" target="_blank">指标监控</a>、<a href="https://www.elastic.co/guide/en/logs/guide/current/index.html" target="_blank">日志管理</a>、<a href="https://opentelemetry.io/docs/concepts/signals/traces/" target="_blank">分布式追踪</a>和<a href="https://www.dynatrace.com/monitoring/platform/application-performance-monitoring/" target="_blank">APM系统</a>的全栈实现</p>
                         </div>
                     </div>
                 </div>
@@ -127,7 +131,7 @@
                     </div>
                     <div class="tech-item">
                         <div class="tech-icon"><i class="bi bi-eye"></i></div>
-                        <h3>可观测性</h3>
+                        <h3>业务可观测性</h3>
                         <p>
                             <a href="https://opentelemetry.io/" target="_blank">OpenTelemetry</a>, 
                             <a href="https://prometheus.io/" target="_blank">Prometheus</a>, 
@@ -149,30 +153,30 @@
 
             <section id="skills" class="skills">
                 <div class="section-title">
-                    <h2>管理能力</h2>
+                    <h2>研发效能</h2>
                     <div class="underline"></div>
                 </div>
                 <div class="skills-container">
                     <div class="skill-category">
                         <div class="skill-item">
                             <div class="skill-icon"><i class="bi bi-kanban"></i></div>
-                            <h3>敏捷开发</h3>
-                            <p>擅长运用敏捷方法论优化研发流程，持续提升团队交付速度和产品质量</p>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="bi bi-robot"></i></div>
-                            <h3>AI应用</h3>
-                            <p>熟练应用人工智能、AI大模型、多智能体等前沿技术解决复杂问题</p>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="bi bi-gear-wide-connected"></i></div>
-                            <h3>DevOps</h3>
-                            <p>精通DevOps和CI/CD等基础设施构建，打造高效自动化研发环境</p>
+                            <h3>项目管理</h3>
+                            <p>精通敏捷开发方法论，擅长项目规划、进度控制和风险管理，确保项目高质量交付</p>
                         </div>
                         <div class="skill-item">
                             <div class="skill-icon"><i class="bi bi-people"></i></div>
                             <h3>团队管理</h3>
-                            <p>丰富的团队管理经验，善于组织协调跨部门间的虚拟研发团队</p>
+                            <p>丰富的团队管理经验，善于组织协调跨部门间的虚拟研发团队，提升团队协作效率</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="bi bi-graph-up"></i></div>
+                            <h3>绩效管理</h3>
+                            <p>建立科学的绩效评估体系，制定合理的KPI指标，持续提升团队整体效能</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="bi bi-lightbulb"></i></div>
+                            <h3>创新管理</h3>
+                            <p>推动技术创新和流程优化，建立创新文化，持续提升团队创新能力</p>
                         </div>
                     </div>
                 </div>
@@ -184,17 +188,19 @@
                     <div class="underline"></div>
                 </div>
                 <div class="contact-container">
-                    <div class="contact-item">
-                        <i class="bi bi-envelope"></i>
-                        <p>xunavy624@gmail.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="bi bi-wechat"></i>
-                        <p>xunavy624</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="bi bi-geo-alt"></i>
-                        <p>中国·北京</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="bi bi-envelope"></i>
+                            <p>xunavy624@gmail.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-wechat"></i>
+                            <p>xunavy624</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-geo-alt"></i>
+                            <p>中国·北京</p>
+                        </div>
                     </div>
                     <div class="contact-social">
                         <a href="https://github.com/xunavy" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>

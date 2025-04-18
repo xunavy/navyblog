@@ -27,15 +27,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // 为导航链接添加平滑滚动
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            window.scrollTo({
-                top: targetSection.offsetTop,
-                behavior: 'smooth'
-            });
+            const href = this.getAttribute('href');
+            // 只处理页内链接（以#开头的链接）
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(href);
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }
         });
     });
     
