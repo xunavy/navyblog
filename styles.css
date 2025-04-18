@@ -152,6 +152,17 @@ section {
     overflow: hidden;
 }
 
+.welcome::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
 .welcome-content {
     text-align: center;
     max-width: 800px;
@@ -538,6 +549,10 @@ section {
     font-size: 1rem;
     min-width: 20px;
     text-align: center;
+}
+
+.contact-item p {
+    margin-bottom: 0;
 }
 
 .contact-social {
